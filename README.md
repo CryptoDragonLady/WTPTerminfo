@@ -106,6 +106,42 @@ three-parameter `setfrgb` and `setbrgb` capabilities. The larger advertised
 color count alone does not guarantee direct-color compatibility with
 applications expecting packed RGB arguments to `setaf`/`setab`.
 
+## Run the capability demo
+
+After installing the entries, run [`test-terminfo.sh`](test-terminfo.sh) directly
+in Windows Terminal Preview, using Bash and ncurses `tput`:
+
+```sh
+TERM=wt-advanced ./test-terminfo.sh
+TERM=wt-direct ./test-terminfo.sh
+```
+
+The demo displays text styles, the 256-color palette, RGB foreground and
+background ramps with `wt-direct`, a clickable hyperlink, a synchronized
+progress animation, and the included [`snake.six`](snake.six) image (600×450
+pixels). SIXEL is sent directly to the terminal; this file does not define a
+SIXEL terminfo capability.
+The script reads `snake.six` from its own directory, so it also works when
+launched from another directory. No image converter is required.
+
+To compare arrow keys, navigation keys, and F1–F12 with the installed key
+definitions:
+
+```sh
+TERM=wt-advanced ./test-terminfo.sh --keys
+```
+
+Press `q` to finish the key test, or Ctrl-C to exit. The script restores text
+styles, cursor visibility, and keypad mode. Inspect the rendering and key
+matches yourself; these are visual checks, not an automatic compatibility
+certification. Run outside `tmux` or `screen` for a direct terminal check.
+
+If the demo reports an outdated hyperlink definition, recompile the updated
+source using the installation command above. The original profile used CSI
+instead of OSC 8 for hyperlinks, which could leave a visible `ttps://...` URL
+in place of a clickable label. In Windows Terminal, use Ctrl-click to open
+the link.
+
 ## Optional system installation
 
 To make both entries available to all users on a Linux system whose terminfo
@@ -138,3 +174,4 @@ precedence over the system entry.
 - [ncurses `tic` manual](https://invisible-island.net/ncurses/man/tic.1m.html)
 - [ncurses terminfo manual](https://invisible-island.net/ncurses/man/terminfo.5.html)
 - [Windows Terminal releases](https://github.com/microsoft/terminal/releases)
+- [DEC SIXEL graphics protocol](https://vt100.net/docs/vt3xx-gp/chapter14.html)
