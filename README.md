@@ -1,6 +1,6 @@
 # WTPTerminfo
 
-Custom terminfo descriptions for Windows Terminal Preview 1.26, provided in
+Custom terminfo descriptions for Windows Terminal 1.25 and Windows Terminal Preview 1.26, provided in
 [`wt-advanced.tl`](wt-advanced.tl). This is an unofficial profile, not a Microsoft
 distribution.
 
