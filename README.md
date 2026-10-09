@@ -124,6 +124,10 @@ SIXEL terminfo capability.
 The script reads `snake.six` from its own directory, so it also works when
 launched from another directory. No image converter is required.
 
+Example output using `wt-direct` in Windows Terminal Preview:
+
+![The wt-direct demo showing text styles, indexed colors, RGB ramps, a hyperlink, and the snake SIXEL image](screenshot.png)
+
 To compare arrow keys, navigation keys, and F1–F12 with the installed key
 definitions:
 
