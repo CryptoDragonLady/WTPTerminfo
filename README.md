@@ -18,6 +18,8 @@ the names used by this file; applications must understand their names and
 semantics to use them. Compiling an entry does not verify that every sequence
 works in the terminal or that an application will use it.
 
+Windows Terminal also support Sixel graphics since 1.22. 
+
 ## Requirements
 
 Run these commands in the environment where your terminal applications run:
